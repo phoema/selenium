@@ -1,0 +1,40 @@
+spring:
+#数据库连接
+  datasource:
+    platform: mysql
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.15:3306/dipub
+    username: root
+    password: jsmart+1
+    max-active: 800
+    test-while-idle: true
+    validation-query: SELECT 1 from dual
+  jpa:
+    hibernate:
+          ddl-auto: update
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    parser:
+      ALLOW_UNQUOTED_FIELD_NAMES:on
+server:
+     port: 8080
+     #context-path: /dipub
+     #servlet-path: /dipub
+     tomcat:
+#         accessLogEnabled: false
+         max-threads: 60
+         uri-encoding: UTF-8
+security:
+  oauth2:
+    client:
+      #dipub
+      #client-id: 20bcda98ac1100066727191c15199cce
+      #client-secret: 20bcda98ac1100066727191cdd17e3f6
+      #dipub1
+      client-id: 5e957fdcac110006189372548de0eac8
+      client-secret: 5e957fdcac1100061893725428fa6007
+      access-token-uri: http://10.10.1.110/oauth/token
+      user-authorization-uri: http://10.10.1.110/oauth/authorize
+      resource-url: http://10.10.1.110/
+      registered-redirect-uri: http://localhost:8080/http/token
+      resource-urlcr: http://10.10.1.7:8085/restzhiliao/

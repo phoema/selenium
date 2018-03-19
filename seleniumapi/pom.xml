@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ipph</groupId>
+    <artifactId>seleniumroot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.ipph</groupId>
+  <artifactId>seleniumapi</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>seleniumapi</name>
+  <url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<start-class>com.ipph.App</start-class>
+	</properties>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>3.4.0</version>
+		</dependency>	
+		<!-- 简繁中文字符转换器 -->
+		<dependency>
+		    <groupId>com.github.nobodxbodon</groupId>
+		    <artifactId>zhconverter</artifactId>
+		    <version>0.0.4</version>
+		</dependency>
+
+	</dependencies>
+
+</project>

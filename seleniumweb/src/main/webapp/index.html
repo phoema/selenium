@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>
+	DI Public 中国知识产权大数据与智慧服务系统公众版
+</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="sucai/styles.css">
+    <link href="sucai/iframe.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="public/js/jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.img').css({ 'height': ($(window).height() + "px") });
+            $('.container').css({ 'height': ($(window).height()*0.35 + "px") });
+        }); 
+    </script>
+    <link href="http://www.zldsj.com/favicon.ico" type="image/x-icon" rel="icon">
+<link href="http://www.zldsj.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="../public/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../public/css/common.css" rel="stylesheet" media="screen">
+<link href="public/beacon/beacon_main.css" rel="stylesheet" media="screen">
+
+<script type="text/javascript" src="detail/js/common.js"></script>
+<script type="text/javascript" src="public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/beacon/beacon_jquery_common.js"></script>
+<script type="text/javascript" src="public/beacon/beacon_jquery_main.js"></script>
+<link type="text/css" rel="stylesheet" href="public/css/header1.css" >   
+</head>
+<body onkeydown="keySearch(event);">
+    <div class="img">
+        <img src="sucai/bg.jpg" style="position: absolute;
+            top:0; width: 100%; left: 0; bottom: 0; z-index: 10; overflow: hidden">
+        
+<header>
+    <!-- navbar -->
+    <div id="headerNav" class="navbar navbar-inverse nav">
+        <div class="navbar-inner">
+            <a class="brand">
+               中国知识产权大数据与智慧服务系统</a>
+            <div class="nav_right">
+                <ul class="J_navList">
+						<li name="01" class="active"><a href="#">首页</a></li>
+						<li name="03"><a href="list/patent.html">专利</a></li>
+						<li name="05"><a href="list/trademark.html">商标</a></li>
+						<li name="06"><a href="list/crsoft.html">版权</a></li>
+					</ul>
+                <div class="pull-right" style="">
+                <ul>
+                    <li><a target="_blank" href="http://zldsj.com/module/help/datainfo.html" >数据范围</a></li>
+                    <li><a target="_blank" href="http://zldsj.com/module/help/about.html" >联系我们</a></li>
+                </ul>
+                  <ul>
+                    <li class="phone" style="cursor: default;">4001880860</li>
+                </ul>
+           </div></div>
+        </div>
+    </div>
+    <!-- end navbar -->
+</header>
+        <div class="container">
+  <div class="holder">
+
+  <div class="center" style="display:none">
+
+			<input id="checkbox-6-1" type="radio"><label for="checkbox-6-1"></label><div class="span">专利</div>
+
+			<input id="checkbox-6-2" type="checkbox"><label for="checkbox-6-2"></label><div class="span">商标</div>
+
+			<input id="checkbox-6-3" type="checkbox"><label for="checkbox-6-3"></label><div class="span">软件著作权</div>
+
+			<input id="checkbox-6-4" checked="checked" type="checkbox"><label for="checkbox-6-4"></label><div class="span">作品著作权</div>
+
+	</div>
+</div>
+</div>
+     
+<div class="search">
+<input id="txt_express" autocomplete="off" placeholder="计算机" type="text" class="inputtext" maxlength="256">
+<input id="btn-search" name="" type="button"  value="检索" class="inputbutton"/>
+		</div>   
+<footer>
+    <div id="footerNew" class="bottom">
+        &nbsp;&nbsp;&nbsp;北京中知智慧科技有限公司版权所有 Copyright 2015 All Rights Reserved
+    </div>
+</footer>
+    </div>
+
+
+<script type="text/javascript">
+
+
+/*正序  降序*/
+$('#btn-search').click(function(){
+	
+	var express = $("#txt_express").val();
+	if(!express || express.trim() == ""){
+		alert('请输入关键字，再进行检索');
+		return;
+	}
+	express = "AN,AD,PN,PD,APO,INO,TIO,ABSO+=(" + express + ")";
+	var url = "list/patentlist.html?union=true&ex="+ encodeURIComponent(express);
+	window.open(url);  
+
+}); //end 排序
+
+
+/* 回车检索 */
+function keySearch(event) { 
+	event = event || window.event;
+	var keyCode = event.keyCode;
+	if (keyCode == 13) // 回车键的键值为13
+		$('#btn-search').click();
+}
+
+
+
+$(function(){
+	initHeader();
+	initFooter();
+    initHeight();
+});
+function initHeader(){
+
+	var str=''; 
+	str+='<ul id="nav1">';
+	str+='<a href="#"><li class="logo">中国知识产权大数据与智慧服务系统</li></a>';
+	str+='<li><a href="index.html" class="selected" >首页</a></li>';
+	str+='<li><a href="list/patent.html" >专利</a></li>';
+	str+='<li><a href="list/trademark.html">商标</a></li>';
+	str+='<li><a href="list/crsoft.html">版权</a></li>';
+	str+='<li class="login">';
+	str+='<ul><li>';
+	str+='<a target="_blank" href="connect/data.html">数据范围</a>';
+	str+='<a target="_blank" href="connect/connect.html">联系我们</a>';
+	str+='</li><li>&nbsp;&nbsp;010-82000906</li>';
+	str+='</ul></li></ul>'; 
+	$('#headerNav').html(str);
+
+}
+function initFooter(){ 
+	var str='';
+	str+='<div class="footer">';
+	str+='版权所有：北京中知智慧科技有限公司&nbsp; &nbsp;&nbsp;&nbsp;          Copyright 2017 All Rights Reserved.';
+	str+='</div>';
+	$('#footerNew').html(str);
+	 
+	 
+}
+function initHeight(){  
+var hh = $(window).height(); 
+hh = hh - $("#headerNav").height() - $("#footerNew").height()-120;
+$(".whole").css("min-height", hh + "px");
+ 
+}
+
+
+
+
+
+
+
+</script>
+</body></html>
